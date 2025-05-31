@@ -15,4 +15,9 @@ public class HomeController {
     public String homePage() {
         return "Welcome to the Home Page!";
     }
+
+    @GetMapping("/getUser")
+    public String getUser() {
+        return "user1!";
+    }
 }
