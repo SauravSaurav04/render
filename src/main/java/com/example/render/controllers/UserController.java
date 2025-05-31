@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class UserController {
 
@@ -15,9 +17,9 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("/getUsers")
-    public User getUser() {
+    public List<User> getUser() {
         // Fetch a user from the database (for demonstration, fetching the first user)
-        return userRepository.findAll().stream().findFirst().orElse(null);
+        return userRepository.findAll();
     }
 
     @PostMapping("/addUser")
